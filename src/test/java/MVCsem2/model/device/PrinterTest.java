@@ -31,7 +31,7 @@ public class PrinterTest {
 
     @Test
     public void printRepairOrderShouldPrintRepairOrderInformation() {
-        RepairOrder order = new RepairOrder("RO8", "Flat tire", "0702223344", "BIKE800");
+        RepairOrder order = new RepairOrder("RO8", "Flat tire", "0700000000", "BIKE999");
         order.addRepairTask("Replace tube", 350);
         order.accept();
 
@@ -42,9 +42,9 @@ public class PrinterTest {
                 "The printout should include the repair order id.");
         assertTrue(output.contains("Problem: Flat tire"),
                 "The printout should include the problem description.");
-        assertTrue(output.contains("Customer phone number: 0702223344"),
+        assertTrue(output.contains("Customer phone number: 0700000000"),
                 "The printout should include the customer phone number.");
-        assertTrue(output.contains("Bike serial number: BIKE800"),
+        assertTrue(output.contains("Bike serial number: BIKE999"),
                 "The printout should include the bike serial number.");
         assertTrue(output.contains("Status: Accepted"),
                 "The printout should include the current status.");
